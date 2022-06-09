@@ -325,4 +325,14 @@ public class JeecgDemoController extends JeecgController<JeecgDemo, IJeecgDemoSe
         return "hello world!";
     }
 
+    @GetMapping(value = "/hello2")
+    public Result<String> hello(){
+        Result<String> result = new Result<String>();
+        result.setResult("Hello World，liming2");
+        result.setSuccess(true);
+        return result;
+    }
+
+
+
 }

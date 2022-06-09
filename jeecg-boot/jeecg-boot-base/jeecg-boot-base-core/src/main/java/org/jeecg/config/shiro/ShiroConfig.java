@@ -72,6 +72,9 @@ public class ShiroConfig {
             }
         }
         // 配置不会被拦截的链接 顺序判断
+        filterChainDefinitionMap.put("/test/helloWorld/hello", "anon"); // 测试helloWorld2
+        filterChainDefinitionMap.put("/test/jeecgDemo/hello2", "anon"); // 测试helloWorld2
+        filterChainDefinitionMap.put("/test/jeecgDemo/hello", "anon"); // 测试helloWorld
         filterChainDefinitionMap.put("/sys/cas/client/validateLogin", "anon"); //cas验证登录
         filterChainDefinitionMap.put("/sys/randomImage/**", "anon"); //登录验证码接口排除
         filterChainDefinitionMap.put("/sys/checkCaptcha", "anon"); //登录验证码接口排除
