@@ -3,6 +3,8 @@ package org.jeecg.modules.cesfieldkongj.controller;
 import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.system.query.QueryGenerator;
 import org.jeecg.modules.cesfieldkongj.entity.CesFieldKongj;
@@ -66,6 +68,7 @@ public class CesFieldKongjController extends JeecgController<CesFieldKongj, ICes
 	@AutoLog(value = "online表单控件-添加")
 	@ApiOperation(value="online表单控件-添加", notes="online表单控件-添加")
 	@PostMapping(value = "/add")
+	@RequiresPermissions("testt:add")
 	public Result<String> add(@RequestBody CesFieldKongj cesFieldKongj) {
 		cesFieldKongjService.save(cesFieldKongj);
 		return Result.OK("添加成功！");
